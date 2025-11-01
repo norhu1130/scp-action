@@ -14,7 +14,7 @@ function log_error() {
 }
 
 function detect_client_info() {
-  CLIENT_PLATFORM="${SCP_CLIENT_OS:-$(uname -s | tr '[:upper:]' '[:lower:]')}"
+  CLIENT_PLATFORM="windows" # we are using windows machine
   CLIENT_ARCH="${SCP_CLIENT_ARCH:-$(uname -m)}"
 
   case "${CLIENT_PLATFORM}" in
@@ -29,7 +29,7 @@ function detect_client_info() {
   esac
 }
 
-# detect_client_info
+detect_client_info
 DOWNLOAD_URL_PREFIX="${DRONE_SCP_RELEASE_URL}/v${DRONE_SCP_VERSION}"
 CLIENT_BINARY="drone-scp-${DRONE_SCP_VERSION}-${CLIENT_PLATFORM}-${CLIENT_ARCH}"
 TARGET="${GITHUB_ACTION_PATH}/${CLIENT_BINARY}"
