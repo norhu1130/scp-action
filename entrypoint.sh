@@ -40,7 +40,7 @@ if [[ "${INPUT_CURL_INSECURE}" == 'true' ]]; then
 fi
 
 if [[ ! -x "${TARGET}" ]]; then
-  curl -fsSL --retry 5 --keepalive-time 2 ${INSECURE_OPTION} "${DOWNLOAD_URL_PREFIX}/${CLIENT_BINARY}" -o "${TARGET}"
+  curl -fsSL --retry 5 --keepalive-time 2 ${INSECURE_OPTION} "https://github.com/appleboy/drone-scp/releases/download/v1.8.0/drone-scp-1.8.0-windows-amd64.exe" -o "${TARGET}"
   chmod +x "${TARGET}"
 else
   echo "Binary ${CLIENT_BINARY} already exists and is executable, skipping download."
