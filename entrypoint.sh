@@ -29,7 +29,7 @@ function detect_client_info() {
   esac
 }
 
-detect_client_info
+# detect_client_info
 DOWNLOAD_URL_PREFIX="${DRONE_SCP_RELEASE_URL}/v${DRONE_SCP_VERSION}"
 CLIENT_BINARY="drone-scp-${DRONE_SCP_VERSION}-${CLIENT_PLATFORM}-${CLIENT_ARCH}"
 TARGET="${GITHUB_ACTION_PATH}/${CLIENT_BINARY}"
